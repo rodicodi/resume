@@ -19,6 +19,9 @@ body {
 body * {
   box-sizing: border-box;
 }
+main {
+  display: block;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Rubik", serif;
   margin: 0;
@@ -32,7 +35,13 @@ hr {
   border-style: solid;
   margin: .5em 0;
 }
-
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary-color);
+}
 
 .btn-print {
   display: none;
@@ -104,11 +113,6 @@ hr {
 .intro .sub-title {
   font-size: 1.2rem;
   font-style: italic;
-}
-
-main {
-  display: block;
-  /*padding: 1rem;*/
 }
 
 .flex-container {
@@ -195,18 +199,24 @@ main {
   display: flex;
   flex-direction: column;
 }
-.personalia p {
+.personalia-blocks p {
   display: flex;
   margin-bottom: .5em;
 }
-.personalia p span {
-  order: 2;
+.personalia-blocks p span {
+  order: 1;
 }
-.personalia p .fas {
+.personalia-blocks p span:first-child {
+  width: 120px;
+  text-align: left;
+}
+.personalia-blocks p .fas {
   color: var(--primary-color);
+  /*text-align: center;*/
+  width: 1em;
 }
-.personalia p .text {
-  flex: 1 1 100%;
+.personalia-blocks p .personalia-content {
+  flex: 1 1 50%;
   margin-left: .5em;
 }
 
@@ -221,15 +231,14 @@ main {
   .personalia-blocks {
     flex-direction: row;
   }
-  .personalia p .text {
-    order: 1;
-    margin-left: unset;
+  .personalia-blocks p .personalia-content {
     margin-right: .5em;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .personalia-blocks hr {
     margin: 0 auto;
+    margin-right: 2em;
   }
 }
 @media (min-width: 1024px) {
