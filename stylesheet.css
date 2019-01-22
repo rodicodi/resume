@@ -30,11 +30,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
 }
-hr {
-  border-color: var(--primary-color);
-  border-style: solid;
-  margin: .5em 0;
-}
 a {
   color: var(--secondary-color);
   text-decoration: none;
@@ -42,11 +37,19 @@ a {
 a:hover {
   color: var(--primary-color);
 }
+hr {
+  border: 0;
+  border-bottom: 1px solid;
+  border-color: var(--primary-color);
+  border-style: solid;
+  margin: .5em auto;
+  width: 12em;
+}
 
 .btn-print {
   display: none;
   background-color: var(--primary-color);
-  border: unset;
+  border: 2px solid #fff;
   border-radius: 100%;
   top: 0;
   right: 1rem;
@@ -54,9 +57,19 @@ a:hover {
   height: 50px;
   position: absolute;
   color: var(--secondary-text);
-  box-shadow: 0 0 1px 0 #373737;
-  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.31);
+  transition: .3s ease-in-out;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
+.btn-print:focus {
+  outline: none;
+}
+.btn-print:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.31);
+  transform: translate(-50%, -50%) rotate(7deg);
+}
+
+
 
 .container {
   position: relative;
@@ -65,7 +78,6 @@ a:hover {
   background-color: #fff;
   box-shadow: 0 0 10px #a7a7a7;
 }
-
 
 .intro {
   padding: 1rem;
@@ -76,7 +88,6 @@ a:hover {
   font-size: 30px;
   text-transform: uppercase;
 }
-
 .intro h1 .logo {
   position: relative;
   color: var(--primary-color);
@@ -99,7 +110,6 @@ a:hover {
   text-align: center;
   margin-top: -.05em;
 }
-
 .intro h1 .delimiter {
   display: none;
   font-weight: 400;
@@ -109,7 +119,6 @@ a:hover {
   font-weight: 300;
   white-space: nowrap;
 }
-
 .intro .sub-title {
   font-size: 1.2rem;
   font-style: italic;
@@ -126,6 +135,8 @@ a:hover {
 }
 .flex-child.right {
   background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
   order: 1;
 }
 
@@ -181,7 +192,6 @@ a:hover {
   width: .8em;
 }
 
-
 .timeline .timeline-item .timeline-content {
   padding: 1em 0 0 2em;
 }
@@ -195,30 +205,70 @@ a:hover {
 }
 
 
-.personalia-blocks {
+.info-blocks {
   display: flex;
   flex-direction: column;
 }
-.personalia-blocks p {
+.info-blocks:not(:first-child) {
+  margin-top: 1rem;
+}
+.info-blocks hr {
+  margin-left: 0;
+  margin-right: auto;
+}
+.info-blocks p {
   display: flex;
+  flex-direction: row;
   margin-bottom: .5em;
+  justify-content: space-between;
 }
-.personalia-blocks p span {
-  order: 1;
-}
-.personalia-blocks p span:first-child {
-  width: 120px;
-  text-align: left;
-}
-.personalia-blocks p .fas {
+
+.info-blocks p .fas {
   color: var(--primary-color);
-  /*text-align: center;*/
   width: 1em;
 }
-.personalia-blocks p .personalia-content {
-  flex: 1 1 50%;
+.info-blocks p .personalia-content {
   margin-left: .5em;
 }
+
+
+.vaardigheden p {
+  align-items: center;
+}
+.vaardigheden p span:last-child {
+  flex: 0 0 70%;
+}
+
+.vaardigheden-skillbar {
+  background-color: #ddd;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.vaardigheden-skillbar:before {
+  content: "";
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  animation: progress .5s cubic-bezier(0.9, 0, 0.63, 1.4);
+  animation-delay: 0;
+}
+.vaardigheden-skillbar.level-10:before { left: -90%; }
+.vaardigheden-skillbar.level-20:before { left: -80%; }
+.vaardigheden-skillbar.level-30:before { left: -70%; }
+.vaardigheden-skillbar.level-40:before { left: -60%; }
+.vaardigheden-skillbar.level-50:before { left: -50%; }
+.vaardigheden-skillbar.level-60:before { left: -40%; }
+.vaardigheden-skillbar.level-70:before { left: -30%; }
+.vaardigheden-skillbar.level-80:before { left: -20%; }
+.vaardigheden-skillbar.level-90:before { left: -10%; }
+.vaardigheden-skillbar.level-100:before { left: 0; }
 
 
 @media (min-width: 768px) {
@@ -228,17 +278,19 @@ a:hover {
   .btn-print {
     display: block;
   }
-  .personalia-blocks {
-    flex-direction: row;
-  }
-  .personalia-blocks p .personalia-content {
-    margin-right: .5em;
-  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .personalia-blocks hr {
-    margin: 0 auto;
-    margin-right: 2em;
+  .flex-child.right {
+    flex-direction: row;
+  }
+  .info-blocks {
+    flex: 0 0 50%;
+  }
+  .info-blocks:nth-of-type(2n+1) {
+    padding-right: 2rem;
+  }
+  .info-blocks:not(:first-child) {
+    margin-top: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -253,10 +305,10 @@ a:hover {
     flex-direction: row;
   }
   .flex-child.left {
-    flex-basis: 75%;
+    flex-basis: 70%;
   }
   .flex-child.right {
-    flex-basis: 25%;
+    flex-basis: 30%;
     order: 3;
     text-align: right;
   }
@@ -287,10 +339,24 @@ a:hover {
     text-align: right;
   }
 
-  .personalia-blocks {
+  .info-blocks hr {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .info-blocks p span:first-child {
+    text-align: left;
+  }
+
+  .vaardigheden p {
     flex-direction: column;
+    align-items: flex-end;
+  }
+  .vaardigheden p span:last-child {
+    width: 100%;
+    margin-top: .5em;
   }
 }
+
 
 
 
@@ -308,4 +374,19 @@ a:hover {
   .intro {
     background-color: #373b46;
   }
+}
+
+
+
+
+/* === ANIMATIONS === */
+
+.delay-20, .delay-20:before { animation-delay: 200ms; }
+.delay-40, .delay-40:before { animation-delay: 400ms; }
+.delay-60, .delay-60:before { animation-delay: 600ms; }
+.delay-80, .delay-80:before { animation-delay: 800ms; }
+.delay-100, .delay-100:before { animation-delay: 1000ms; }
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translate(0); }
 }
