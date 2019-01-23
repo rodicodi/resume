@@ -10,18 +10,31 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400|Rubik:300,400,700" rel="stylesheet" />
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="stylesheet.css" />
+  <link rel="stylesheet" href="stylesheet-dist.css" />
 
 </head>
 <body>
   <div class="container">
-    <button onclick="window.print();" class="btn-print"><i class="fas fa-print"></i> Print</button>
+    <div class="btn-container">
+      <button onclick="window.print();" class="btn-print">
+        <i class="fas fa-print"></i> Print
+        <span>Mooiste resultaat met <strong><em>Achtergrondbeelden</em></strong> aan</span>
+      </button>
+    </div>
     <header class="intro">
       <h1>R<span class="logo">O</span>nald Schelling <span class="delimiter">|</span> <span class="after-title">Curriculum Vitae</span></h1>
       <p class="sub-title">Junior web-developer</p>
     </header>
     <main>
       <div class="flex-container">
+        <div class="flex-child top">
+          <div class="info-blocks motivatie">
+            <h2>Introductie / Motivatie</h2>
+            <hr />
+            <p>Al sinds kinds af aan geinspireerd door techniek, design en wetenschap, houd ik mij dagelijks bezig met deze onderwerpen. Designer in hart en nieren, maar ook sinds een paar jaar in sneltreinvaart omgeschoold tot webdeveloper. Sindsdien op dagelijkse basis bezig met het puzzelen en optimaliseren van code, opmaak van websites, en design principes.</p>
+            <p>Nooit te beroerd voor een nieuwe uitdaging, altijd zoekende naar verbetering, en tijdloos met overtijd. Vaak Pietje Precies, maar daarmee zijn kwaliteit en up-to-date code wel een garantie. Tevens pak ik regelmatig de tijd mijzelf te verbeteren met de dingen die ik leer, en de wereld om mij heen te verbeteren met de code die ik schrijf.</p>
+          </div>
+        </div>
         <div class="flex-child left">
           <div class="timeline is-centered">
             <header class="timeline-header">
@@ -31,7 +44,7 @@
               <div class="timeline-marker"></div>
               <div class="timeline-content">
                 <time class="date">Dec 2017 - Heden</time>
-                <p class="title">S&S Online Marketing</p>
+                <p class="title">S&amp;S Online Marketing</p>
                 <p><em>Functie: Web Developer Wordpress / Front-End</em></p>
               </div>
             </div>
@@ -49,7 +62,7 @@
               <div class="timeline-marker"></div>
               <div class="timeline-content">
                 <time class="date">Jan 2014 - Sep 2016</time>
-                <p class="title">Neverseen Art & Design, Almere</p>
+                <p class="title">Neverseen Art &amp; Design, Almere</p>
                 <p><em>Functie: 3D Designer</em></p>
               </div>
             </div>
@@ -81,7 +94,7 @@
               <div class="timeline-marker"></div>
               <div class="timeline-content">
                 <time class="date">Sep 2006 - Jan 2008</time>
-                <p class="title">Opleiding: Game Design & Development </p>
+                <p class="title">Opleiding: Game Design &amp; Development </p>
                 <p><small>HBO, Hogere Kunstschool van Utrecht, Hilversum</small></p>
               </div>
             </div>
@@ -99,92 +112,80 @@
           </div>
         </div>
         <div class="flex-child right">
-          <div class="info-blocks">
+          <div class="info-blocks personalia">
             <h2>Personalia</h2>
             <hr />
-            <div class="personalia">
-              <p>
-                <span class="fas fa-map-marker-alt"></span>
-                <span class="personalia-content">Glinkastraat 129<br />1323 RE, Almere</span>
-              </p>
-              <p>
-                <span class="fas fa-mobile-alt"></span>
-                <span class="personalia-content"><a href="+31655844921">06 - 55 84 49 21</a></span>
-              </p>
-              <p>
-                <span class="fas fa-envelope"></span>
-                <span class="personalia-content"><a href="mailto:rd.schelling@gmail.com">rd.schelling@gmail.com</a></span>
-              </p>
-              <p>
-                <span class="personalia-titel"><small>Geboorteplaats</small></span>
-                <span class="personalia-content">Dordrecht</span>
-              </p>
-              <p>
-                <span class="personalia-titel"><small>Nationaliteit</small></span>
-                <span class="personalia-content">Nederlandse</span>
-              </p>
-              <p>
-                <span class="personalia-titel"><small>Talen</small></span>
-                <span class="personalia-content">Nederlands, Engels</span>
-              </p>
-              <p>
-                <span class="personalia-titel"><small>Burgerlijke staat</small></span>
-                <span class="personalia-content">Ongehuwd</span>
-              </p>
-            </div>
+            <p>
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="personalia-content">Glinkastraat 129<br />1323 RE, Almere</span>
+            </p>
+            <p>
+              <span class="fas fa-mobile-alt"></span>
+              <span class="personalia-content"><a href="+31655844921">06 - 55 84 49 21</a></span>
+            </p>
+            <p>
+              <span class="fas fa-envelope"></span>
+              <span class="personalia-content"><a href="mailto:rd.schelling@gmail.com">rd.schelling@gmail.com</a></span>
+            </p>
+            <p>
+              <span class="personalia-titel"><small>Geboorteplaats</small></span>
+              <span class="personalia-content">Dordrecht</span>
+            </p>
+            <p>
+              <span class="personalia-titel"><small>Nationaliteit</small></span>
+              <span class="personalia-content">Nederlandse</span>
+            </p>
+            <p>
+              <span class="personalia-titel"><small>Talen</small></span>
+              <span class="personalia-content">Nederlands, Engels</span>
+            </p>
+            <p>
+              <span class="personalia-titel"><small>Burgerlijke staat</small></span>
+              <span class="personalia-content">Ongehuwd</span>
+            </p>
           </div>
-          <div class="info-blocks">
+          <div class="info-blocks vaardigheden">
             <h2>Vaardigheden</h2>
             <hr />
-            <div class="vaardigheden">
-              <p>
-                <span class="vaardigheden-content">3D Modelleren</span>
-                <span class="vaardigheden-skillbar level-80"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">Adobe Suite</span>
-                <span class="vaardigheden-skillbar level-70 delay-40"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">HTML</span>
-                <span class="vaardigheden-skillbar level-70 delay-80"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">CSS / SCSS</span>
-                <span class="vaardigheden-skillbar level-70 delay-60"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">WordPress</span>
-                <span class="vaardigheden-skillbar level-60 delay-20"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">Bootstrap</span>
-                <span class="vaardigheden-skillbar level-60 delay-100"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">PHP</span>
-                <span class="vaardigheden-skillbar level-50 delay-60"></span>
-              </p>
-              <p>
-                <span class="vaardigheden-content">MySQL</span>
-                <span class="vaardigheden-skillbar level-40 delay-20"></span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="flex-child bottom">
-          <div class="info-blocks">
-            <h2>Motivatie</h2>
-            <hr />
-            <div class="motivatie">
-              <p>Al sinds kinds af aan geinspireerd door techniek, design en wetenschap, hou ik mij dagelijks bezig met deze onderwerpen. Designer in hart en nieren, maar ook sinds een paar jaar in sneltreinvaart omgeschoold tot webdeveloper. Sindsdien vind ik het enorm leuk om me bezig te houden met de dagelijkse gevarieerde puzzels, en aan layout.</p>
-              <p>Nooit te beroerd voor een nieuwe uitdaging, en altijd op zoek naar verbetering, en tijdloos met overtijd. Vaak Pietje Precies, maar ik geloof erin dat ik daarmee kwaliteit kan garanderen.</p>
-              <p>Altijd op zoek naar de ruimte om mijzelf te verbeteren met de dingen die ik leer, en de wereld om mij heen te verbeteren met de code die ik schrijf.</p>
-            </div>
+            <p>
+              <span class="vaardigheden-content">3D Modelleren</span>
+              <span class="vaardigheden-skillbar level-80"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">Adobe Suite</span>
+              <span class="vaardigheden-skillbar level-70 delay-40"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">HTML</span>
+              <span class="vaardigheden-skillbar level-70 delay-80"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">CSS / SCSS</span>
+              <span class="vaardigheden-skillbar level-70 delay-60"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">WordPress</span>
+              <span class="vaardigheden-skillbar level-60 delay-20"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">Bootstrap</span>
+              <span class="vaardigheden-skillbar level-60 delay-100"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">PHP</span>
+              <span class="vaardigheden-skillbar level-50 delay-60"></span>
+            </p>
+            <p>
+              <span class="vaardigheden-content">MySQL</span>
+              <span class="vaardigheden-skillbar level-40 delay-20"></span>
+            </p>
           </div>
         </div>
       </div>
     </main>
+    <footer>
+      <p>2019 &copy; Design and code by <a href="mailto:rd.schelling@gmail.com">Ronald Schelling</a></p>
+    </footer>
   </div>
 </body>
 </html>
