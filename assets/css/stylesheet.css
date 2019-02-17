@@ -283,6 +283,7 @@ hr {
 }
 .info-blocks.motivatie p {
   margin-bottom: 1em;
+  display: inline;
 }
 
 /* Personalia blok */
