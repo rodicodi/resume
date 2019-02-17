@@ -435,6 +435,7 @@ footer p {
   .info-blocks.vaardigheden p span:last-child {
     width: 100%;
     margin-top: .5em;
+    flex: 1 1 100%;
   }
 }
 
