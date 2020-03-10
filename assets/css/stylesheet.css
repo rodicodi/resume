@@ -306,7 +306,7 @@ hr {
 .vaardigheden-skillbar {
   background-color: #ddd;
   border-radius: 10px;
-  height: 10px;
+  min-height: 10px;
   position: relative;
   overflow: hidden;
 }
